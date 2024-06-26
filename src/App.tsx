@@ -1,24 +1,13 @@
-import { useEffect, useState } from "react";
-import { countriesAPI } from "./api/countriesAPI";
-
-type country = {};
-
-type CountryList<T> = {
-  data: T[];
-};
+import CountriesList from "./components/CountriesList";
 
 export default function App(): JSX.Element {
-  const [data, setData] = useState(null);
-
-  const fetchCountries = async () => {
-    const response = await countriesAPI.get("");
-
-    console.log(response);
-  };
-
-  useEffect(() => {
-    fetchCountries();
-  }, []);
-
-  return <div></div>;
+  return (
+    <section className="m-4">
+      <h1 className="text-center mb-4 text-3xl font-bold">
+        250 Countries All around the World!
+      </h1>
+      <CountriesList />
+    </section>
+  );
+  // return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
 }
