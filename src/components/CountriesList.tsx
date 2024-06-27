@@ -14,10 +14,12 @@ export default function CountriesList() {
     // 꼼꼼한 Type Check 를 위해 get method 또한 타입을 명시해준다.
     const response = await countriesAPI.get<CountryWithisSelected[]>("");
 
-    const countriesList = response.data.map((item) => ({
-      ...item,
-      isSelected: false,
-    }));
+    const countriesList = response.data.map(
+      (item): CountryWithisSelected => ({
+        ...item,
+        isSelected: false,
+      })
+    );
     return countriesList;
   };
 
