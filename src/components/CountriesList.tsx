@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { countriesAPI } from "../api/countriesAPI";
 import CountryCard from "./CountryCard";
 import { CountryWithisSelected } from "../types/country.type";
 
-export default function CountriesList() {
+const CountriesList: React.FC = () => {
   const [countries, setCountries] = useState<CountryWithisSelected[]>([]);
   const [pending, setPending] = useState<boolean>(true);
   const [selectedCountries, setSelectedCountries] = useState<
@@ -46,7 +46,6 @@ export default function CountriesList() {
           <CountryCard
             key={index}
             country={country}
-            countries={countries}
             setSelectedCountries={setSelectedCountries}
           />
         ))}
@@ -57,11 +56,12 @@ export default function CountriesList() {
           <CountryCard
             key={index}
             country={country}
-            countries={countries}
             setSelectedCountries={setSelectedCountries}
           />
         ))}
       </ul>
     </>
   );
-}
+};
+
+export default CountriesList;

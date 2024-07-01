@@ -1,9 +1,10 @@
+import React from "react";
 import { CountryCardProps } from "../types/country.type";
 
-export default function CountryCard({
+const CountryCard: React.FC<CountryCardProps> = ({
   country,
   setSelectedCountries,
-}: CountryCardProps) {
+}) => {
   const handleCardClick = () => {
     setSelectedCountries((prevSelected) => {
       // prevSelected 인 경우
@@ -41,4 +42,6 @@ export default function CountryCard({
       </div>
     </li>
   );
-}
+};
+
+export default CountryCard;
