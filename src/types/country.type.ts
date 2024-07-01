@@ -96,7 +96,6 @@ export type CountryWithisSelected = Country & {
 export interface CountryCardProps {
   // props 중 country 의 type 은 Country 다
   country: CountryWithisSelected;
-  countries: CountryWithisSelected[];
   setSelectedCountries: React.Dispatch<
     React.SetStateAction<CountryWithisSelected[]>
   >;
